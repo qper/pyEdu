@@ -9,7 +9,11 @@ with open(r'yaml/main.yml') as file:
 
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
-template = env.get_template('index.html.j2')
-
+template = env.get_template('index.html')
 output = template.render(data=yaml_data['person'])
-print(output)
+
+# print(output)
+
+html_file = open("index.html", "w")
+html_file.write(output)
+html_file.close()

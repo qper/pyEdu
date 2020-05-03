@@ -1,0 +1,19 @@
+<html>
+    {% include 'header.html' %}
+    <body>
+    {% if data.friends %}
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+        </tr>
+    {% for friend in data.friends %}
+        <tr>
+            <th>{{ friend['name'] }}</th>
+            <th>{{ friend['age'] }}</th>
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+    </body>
+</html>
