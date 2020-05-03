@@ -1,0 +1,47 @@
+---
+person:
+  name: &name 'Aleksei'
+  surname: &surname 'Smirnov'
+  age: 32
+  height: 1.8
+  date_of_birthday: 1988-02-21 11:33:22
+  male: True
+  flaws: null
+  hobbies:
+    - hiking
+    - movies
+    - riding bike
+  movies: ['Dark Knight',]
+  friends:
+    - name: 'Steph'
+      age: 22
+    - {name: 'Adam', age: 22}
+    -
+      name: 'Joe'
+      age: 23
+  description: >
+    blue hole shortcoming disadvantage imperfection omission 
+    fault drawback defect downside deficiency disfigurement blemish 
+    lack cracks deformity imperfections faults error mistake failing 
+     blue hole shortcoming disadvantage imperfection omission 
+    fault drawback defect downside deficiency disfigurement blemish 
+    lack cracks deformity imperfections faults error mistake failing 
+    weakness weak point breach break blue hole shortcoming disadvantage 
+    imperfection omission fault drawback defect downside deficiency 
+    disfigurement blemish lack cracks deformity imperfections faults 
+    error mistake failing weakness weak point breach break weak point 
+    breach break
+  signature: |
+    Aleksei Smirnov
+    Gather yourself
+    email - asitnn@gmail.com
+  id: *name
+
+  base: &base
+    var1: value1
+  
+  foo:
+    <<: *base
+  var2: value2
+
+...
