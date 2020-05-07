@@ -35,13 +35,14 @@ def show_current_health_points(health):
     print("My current health point(s): " + str(health))
 
 
-character = GameCharacter("Pac-Man", 100, 16)
-character.speak()
-show_current_health_points(character.health)
+if __name__ == "__main__":
+    character = GameCharacter("Pac-Man", 100, 16)
+    character.speak()
+    show_current_health_points(character.health)
 
-bad_character = Villain("Assassin", 100, 80)
-bad_character.speak()
-bad_character.kill(character)
+    bad_character = Villain("Assassin", 100, 80)
+    bad_character.speak()
+    bad_character.kill(character)
 
-character.speak()
-show_current_health_points(character.health)
+    character.speak()
+    show_current_health_points(character.health)
