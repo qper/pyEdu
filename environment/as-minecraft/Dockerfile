@@ -13,7 +13,7 @@
 #--volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
 #as-minecraft:latest
 
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 
 ARG TERM=xterm
 ARG LC_ALL=C.UTF-8
@@ -23,9 +23,8 @@ RUN apt-get update && \
     apt-get install --yes --no-install-recommends apt-utils && \
     apt-get install --yes --no-install-recommends apt-transport-https && \
     apt-get install --yes --no-install-recommends software-properties-common && \
-    add-apt-repository --yes ppa:flexiondotorg/minecraft && \
     apt-get update && \
-    apt-get install -y --no-install-recommends minecraft-installer \
+    apt-get install -y --no-install-recommends \
         gdebi-core \
         wget \
     && \
@@ -36,4 +35,4 @@ RUN apt-get update && \
 
 ENV NO_AT_BRIDGE=1
 
-CMD ['minecraft-launcher']
+CMD minecraft-launcher
