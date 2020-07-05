@@ -3,11 +3,11 @@ from dadata import Dadata
 from os import path
 from time import strftime as format_time
 from tqdm import tqdm
-import json
+from json import dump, dumps, load, loads
 
 data = {}
-data_file = format_time('%Y-%m-%d-%H-%M-%S')
-
+current_date_and_time = format_time('%Y-%m-%d-%H-%M-%S')
+data_file = f'{current_date_and_time}.json'
 
 
 file_dir = path.dirname(path.realpath(__file__))
@@ -28,5 +28,5 @@ for item in tqdm(tax_numbers_list):
     print(response)
     data.update({f'{item}': response})
 
-with open(f'{data_dir}/{data_file}.json', 'w') as json_file:
-    json.dump(data, json_file)
+with open(f'{data_dir}/{data_file}', 'wb') as json_file:
+    json_file = dumps(data)
