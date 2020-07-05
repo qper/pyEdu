@@ -28,5 +28,7 @@ for item in tqdm(tax_numbers_list):
     print(response)
     data.update({f'{item}': response})
 
-with open(f'{data_dir}/{data_file}', 'wb') as json_file:
-    json_file = dumps(data)
+print(data)
+
+with open(f'{data_dir}/{data_file}', 'w') as json_file:
+    dump(data, json_file)
